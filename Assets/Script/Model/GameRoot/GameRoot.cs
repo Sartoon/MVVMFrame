@@ -21,8 +21,9 @@ namespace MVVM
         {
             ClearCanvas();
             yield return null;
+            AddSingleton<MessageDispatcher>();
             AddSingleton<UIManager>();
-            
+           // AddSingleton<>();
 
             
         }

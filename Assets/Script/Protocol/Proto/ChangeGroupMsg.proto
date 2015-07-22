@@ -1,0 +1,27 @@
+package protocol;
+
+option java_package = "protocol.Msg";
+import "GroupData.proto";
+
+message ChangeGroupReq{
+	enum ChangeType{
+		ADD = 0;
+		DELETE = 1;
+		UPDATE_INFO = 2;
+	}
+	required string groupId = 1;
+	required ChangeType changeType = 2;
+	repeated string userId = 3;
+	optional string groupName = 4;
+}
+message ChangeGroupRsp{
+	enum ResultCode{
+    	SUCCESS = 0;
+		FAIL = 1;
+		NO_AUTHORITY = 2;
+	}
+	required ResultCode resultCode = 1;
+}
+message ChangeGroupSync{
+	required GroupItem groupItem = 1;
+}

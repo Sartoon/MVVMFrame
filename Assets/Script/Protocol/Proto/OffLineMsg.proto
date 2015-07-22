@@ -1,0 +1,14 @@
+package protocol;
+
+option java_package = "protocol.Msg";
+
+message OffLineSync{
+	//下线原因
+	enum CauseCode{
+		CHANGE_PASSWORD=0;//修改密码
+		ANOTHER_LOGIN=1;//其他设备登录
+		KEEP_ALIVE_FALSE=2;
+	}
+	required CauseCode causeCode =1;
+	
+}
